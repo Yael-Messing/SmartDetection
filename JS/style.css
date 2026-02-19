@@ -1,0 +1,197 @@
+        :root {
+            --primary: #6366f1;
+            --danger: #ef4444;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .search-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            background: #0f172a;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+        }
+
+        button {
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        #check {
+            background: var(--primary);
+            color: white;
+        }
+
+        #check:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        #cyberMode {
+            background: transparent;
+            border: 1px solid var(--danger);
+            color: var(--danger);
+        }
+
+        #cyberMode.active {
+            background: var(--danger);
+            color: white;
+        }
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        #map {
+            height: 350px;
+            width: 100%;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid #334155;
+            margin-bottom: 20px;
+        }
+
+        .side-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+        }
+
+        .score-badge {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+            border: 4px solid currentColor;
+        }
+
+        .risk-low {
+            color: var(--success);
+        }
+
+        .risk-medium {
+            color: var(--warning);
+        }
+
+        .risk-high {
+            color: var(--danger);
+        }
+
+        #feed-list {
+            max-height: 250px;
+            overflow-y: auto;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feed-item {
+            padding: 10px;
+            border-bottom: 1px solid #334155;
+            font-size: 0.85rem;
+        }
+
+        .btn-download {
+            width: 100%;
+            background: var(--success);
+            color: white;
+            margin-top: 10px;
+        }
+
+        /* מראה מודרני למפה */
+        .leaflet-container {
+            background: #111 !important;
+        }
+
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            margin: 20px auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #error-message {
+            background-color: #fef2f2;
+            padding: 15px;
+            font-weight: 600;
+        }

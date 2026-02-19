@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart detection</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>SMART DETECTION</h1>
+        <p>Advanced Cybersecurity Analytics for Real-time Network Defense</p>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="inputField" placeholder="Enter IP address to scan...">
+        <button id="check">Scan</button>
+        <button id="cyberMode">Live Monitoring</button>
+    </div>
+
+    <div class="main-layout">
+        <div id="map"></div>
+
+        <div class="side-panel">
+            <div id="result" class="card" style="display: none; text-align: center;">
+                <div id="scoreBadge" class="score-badge"></div>
+                <h3 id="statusText"></h3>
+                <div id="detailsText" style="text-align: right; font-size: 0.9rem; line-height: 1.6;"></div>
+            </div>
+
+            <div class="card">
+                <h4 style="margin-top: 0;">🔴 Live Threat Log</h4>
+                <ul id="feed-list"></ul>
+                <button class="btn-download" onclick="downloadReport()">📥 Download CSV Report</button>
+            </div>
+            <div id="error-message" class="card"
+                style="display: none; border-right: 4px solid #ef4444; color: #ef4444;">
+                ⚠️ Error: Could not connect to the server. Make sure the backend is running.
+            </div>
+
+            <div id="loader" class="loader" style="display: none;"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
